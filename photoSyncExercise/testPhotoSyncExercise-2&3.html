@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testPhotoSyncExercise-2&3</title>
+	<style type="text/css">
+		img { margin: 20px;}
+	</style>
+</head>
+<body>
+	<dl id="content"></dl>
+	<div id="loading" style="display: none;">loading……</div>
+<script type="text/javascript" src="photoSyncExercise.js"></script>
+<script type="text/javascript">
+var url = 'http://photo-sync.herokuapp.com/photos';
+var columnPhotoNum = 5;
+var photoSize = 160;
+
+var timer = null;
+var loadDistance = photoSize * 1.5;
+var isLoading = false;
+
+function renderPhotos(photodata) {
+	var photos = group(photodata.photos);
+	window.url = photodata.nextURL;
+
+	var content = g('content');
+
+	for(var time in photos) {
+		// 添加标签
+		var dt = document.createElement('dt');
+		dt.innerHTML = time;
+		content.appendChild(dt);
+
+		// 添加照片
+		var photosInGroup = photos[time];
+		for(var i=0,n=photosInGroup.length; i<n; i++) {
+			if(i%columnPhotoNum === 0) {
+				var dd = document.createElement('dd');
+				content.appendChild(dd);
+			}
+			var img = getPhotoElement(photosInGroup[i], photoSize);
+			dd.appendChild(img);
+		}
+	}
+}
+
+function loadPhotos(url) {
+	isLoading = true;
+	g('loading').style.display = 'block';
+	getJsonp(url, 'renderPhotos', function(e){
+		isLoading = false;
+		g('loading').style.display = 'none';
+	});
+}
+
+window.onscroll = function(e){
+	if (!timer) {
+		timer = setTimeout(function(){
+			var domRect = getDocRect();
+			var needLoad = domRect.scrollHeight - domRect.scrollY - domRect.height < loadDistance;
+			if (!isLoading && needLoad && url) {
+				loadPhotos(url);
+			}
+			timer = null;
+		}, 200);
+	};
+}
+
+loadPhotos(url);
+
+</script>
+</body>
+</html>

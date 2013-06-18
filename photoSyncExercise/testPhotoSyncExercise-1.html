@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testPhotoSyncExercise-1</title>
+</head>
+<body>
+	<pre id="input">[
+  {
+    "id" : "1329fdebd5",
+    "time" : 1345168843044,
+    "width" : 823,
+    "height" : 888,
+    "imageURL" : "http://photo-sync.herokuapp.com/photos/1329fdebd5"
+  },
+  {
+    "id" : "1a55f933e8",
+    "time" : 1345131939576,
+    "width" : 1131,
+    "height" : 1154,
+    "imageURL" : "http://photo-sync.herokuapp.com/photos/1a55f933e8"
+  },
+  {
+    "id" : "146be11fbf",
+    "time" : 1345130185274,
+    "width" : 877,
+    "height" : 926,
+    "imageURL" : "http://photo-sync.herokuapp.com/photos/146be11fbf"
+  }
+]</pre>
+	<pre id="output"></pre>
+<script type="text/javascript" src="photoSyncExercise.js"></script>
+<script type="text/javascript">
+	var input = JSON.parse(g('input').innerHTML);
+	var output = group(input);
+	g('output').innerHTML = JSON.stringify(output);
+</script>
+</body>
+</html>
