@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>获取鼠标进入容器方向</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<script type="text/javascript" src="http://dev.qwrap.com/download/latest/apps/qwrap.js?20121011"></script>
+</head>
+<body>
+	<div id="rect"></div>
+	<div id="box" style="position: absolute; left: 400px; top: 100px; width: 200px; height:200px; background-color: blue;"></div>
+</body>
+<script type="text/javascript">
+	var box = W('#box');
+	var boxRect = box.getRect();
+	var outXY;
+
+	W('#rect').html('{0}|{1}::{2}|{3}'.format(boxRect.left,boxRect.right,boxRect.top,boxRect.bottom));
+
+	box.parentNode().on('mousemove', function(e){
+		console.log('o');
+		outXY = {
+			x: e.pageX,
+			y: e.pageY
+		};
+	});
+
+	box.on('mouseenter', function(e){
+		console.log('i');
+		if (!outXY) {return};
+
+		var dx = e.pageX - outXY.x;
+		var dy = e.pageY - outXY.y;
+
+		box.html('');
+
+		if (outXY.x <= boxRect.left || outXY.x >= boxRect.right) {
+			// x方向进入
+			if (dx > 0) {
+				box.html('左进入');
+			} else {
+				box.html('右进入');
+			};
+
+			if (outXY.x <= boxRect.left) {
+				box.html(box.html()+'<br>左进入');
+			} else{
+				box.html(box.html()+'<br>右进入');
+			};
+		} else {
+			// y方向进入
+			if (dy > 0) {
+				box.html('上进入');
+			} else {
+				box.html('下进入');
+			};
+
+			if (outXY.y <= boxRect.top) {
+				box.html(box.html()+'<br>上进入');
+			} else{
+				box.html(box.html()+'<br>下进入');
+			};
+		};
+
+		box.html('{0}<br>{1}|{2}|{3}|{4}'.format(box.html(),outXY.x,outXY.y,dx,dy));
+		   });
+</script>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>test闭包循环引用内存泄露</title>
+</head>
+<body>
+	<div id="bb"><div id="aa">cc</div></div>  
+<script type="text/javascript">  
+function leakTest(){  
+	var a=[];//用来加大闭包资源占用，方便观察  
+	for(var i=0;i<100000;i++){  
+	 a.push('a');  
+	}  
+	var divA=document.getElementById('aa');  
+	divA.kk=function(){};  
+	divA.parentNode.removeChild(divA);  
+}  
+leakTest();  
+</script>  
+</body>
+</html>

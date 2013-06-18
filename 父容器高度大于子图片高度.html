@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<title>父容器高度大于子图片高度</title>
+</head>
+<body>
+	<select id="lineselector">
+		<option value="baseline">baseline</option>
+		<option value="sub">sub</option>
+		<option value="super">super</option>
+		<option value="top">top</option>
+		<option value="text-top">text-top</option>
+		<option value="middle">middle</option>
+		<option value="bottom">bottom</option>
+		<option value="text-bottom">text-bottom</option>
+	</select>
+	<script type="text/javascript">
+		document.querySelector("#lineselector").onchange = function(){
+			document.querySelector("#line").style.verticalAlign = this.value;
+			document.querySelector("#image").style.verticalAlign = this.value;
+		}
+	</script>
+	<div style="border: 1px blue solid;">
+		<div id="line" style="position: relative; height: 0px; width: 0px; display: inline-block; overflow: visible; vertical-align: baseline;">
+			<div style="position: absolute; height: 1px; width: 99999px; background: gray; overflow: hidden;">&nbsp;</div>
+		</div>
+		<img id="image" src="http://www.baidu.com/img/bdlogo.gif" style="border: 1px red solid;"/>
+	</div>
+</body>
+</html>

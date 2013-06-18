@@ -1,0 +1,23 @@
+<html>
+<head>
+	<meta charset="gbk">
+	<title>postMessage通信-被引用页面</title>
+</head>
+<body>
+	<button id='sendMessage'>发送消息</button>
+	<input id='message' value='0'>
+<script type="text/javascript">
+	parent.onmessage=function(e){
+		console.log(e);
+		message.value = +message.value + 1;
+	};
+	window.onmessage=function(e){
+		console.log(e);
+		message.value = +message.value + 1;
+	};
+	sendMessage.onclick = function(){
+		parent.postMessage({sendby: 2, m: 'test'}, '*');
+	};
+</script>
+</body>
+</html>

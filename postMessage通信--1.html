@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="gbk">
+	<title>postMessage通信-引用页面</title>
+</head>
+<body>
+<button id='openNewWindow'>弹出新窗口</button>
+<button id='sendMessage'>发送消息</button>
+<input id='message' value='0'>
+<iframe id='childWindow' src="test03-2.html"></iframe>
+<script type="text/javascript">
+	var childWindow = document.getElementById('childWindow');
+	openNewWindow.onclick = function(){
+		window.w=window.open('test03-2.html');
+	}
+	window.onmessage=function(e){
+		console.log(e);
+		message.value = +message.value + 1;
+	};
+	sendMessage.onclick = function(){
+		w.postMessage({sendby: 1, m: 'test'}, '*');
+		childWindow.contentWindow.postMessage({sendby: 1, m: 'test'}, '*');
+	};
+</script>
+</body>
+</html>
