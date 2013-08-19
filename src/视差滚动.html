@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>视差滚动</title>
+</head>
+<style type="text/css">
+	body {
+		height: 2000px;
+	}
+	.bg {
+		position: fixed;
+		width: 100%;
+		height: 2000px;
+		top: -500px;
+		background-image: url('http://www.xxthemes.com/article/UploadPic/2011-8/20118312301939866.jpg');
+		background-size: cover;
+	}
+	.wrap {
+		position: fixed;
+		width: 100px;
+		height: 50px;
+		top: 300px;
+		left: 50%;
+		margin-left: -50px;
+		background-color: green;
+	}
+</style>
+<body>
+	<div class="bg"></div>
+	<div class="wrap"></div>
+<script type="text/javascript" src="http://s0.qhimg.com/lib/jquery/183.js"></script>
+<script type="text/javascript">
+	var a = $('.bg');
+	var t = $('.wrap');
+	var y = 0;
+
+	function doScroll(){
+		console.log(window.scrollY-y);
+		if(Math.abs(window.scrollY-y)>30){
+			y += (window.scrollY-y)/Math.abs(window.scrollY-y) * Math.max( 30, Math.abs(window.scrollY-y)/4 );
+			setTimeout(doScroll,0);
+		} else {
+			y=window.scrollY;
+		}
+		a.css('top',-500-(y)/4);
+		t.css('top',300-(y)/3);
+	}
+
+	window.onscroll = doScroll;
+</script>
+</body>
+</html>
