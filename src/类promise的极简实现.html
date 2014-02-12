@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>5</title>
+</head>
+<body>
+<script type="text/javascript">
+	var Deffer = function(){
+		var def = Object.create({
+			resolve:function(){
+				var re = null;
+				if(def.handle){
+					re = def.handle();
+				}
+				if (re && re.then) {
+					re.next = def.next;
+				} else {
+					def.next && def.next();
+				}
+
+			},
+			handle:null,
+			next:null,
+			then:function(fn){
+				var newdef = Deffer();
+				def.next = function(){
+					newdef.resolve();
+				};
+				newdef.handle = fn;
+				return newdef;
+			}
+		});
+		return def;
+	};
+	
+	function fa(){
+		var def = Deffer();
+		console.log('a-do');
+		setTimeout(function(){
+			def.resolve();
+		},2000);
+		return def;
+	}
+	function fb(){
+		var def = Deffer();
+		console.log('b-do');
+		setTimeout(function(){
+			def.resolve();
+		},2000);
+		return def;
+	}
+	function fc(callback){
+		var def = Deffer();
+		console.log('c-do');
+		setTimeout(function(){
+			def.resolve();
+		},2000);
+		return def;
+	}
+</script>
+<script type="text/javascript">
+	fa()
+	.then(function(){
+		console.log('b-start');
+		return fb();
+	})
+	.then(function(){
+		console.log('c-start');
+		return fc();
+	})
+	.then(function(){
+		console.log('end');
+	})
+</script>
+</body>
+</html>

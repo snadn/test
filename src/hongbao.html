@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hongbao</title>
+</head>
+<body>
+<script type="text/javascript">
+var hongbao = function(){
+	var hongbao = [];
+	return {
+		init : function(n,m){
+			var sum=0,arr=[];
+			for(var i=0;i<m;i++){
+				var tmp = parseInt((Math.random()*100));
+				arr.push(tmp);
+				sum += tmp;
+			}
+			var nn = 0;
+			arr.forEach(function(item,index){
+				var tmp = parseInt((n*item/sum)*100)/100;
+				nn += tmp;
+				hongbao.push(tmp);
+			});
+			hongbao[parseInt(Math.random()*m)] += n-nn;
+		},
+		get: function(){
+			if(hongbao.length > 0){
+				console.log(hongbao.shift());
+			} else {
+				console.log('over')
+			}
+		}
+	}
+}();
+hongbao.init(100,10)
+for(var i=0; i<11; i++){hongbao.get()}
+</script>
+</body>
+</html>
