@@ -1,0 +1,328 @@
+
+
+
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>onebox_test</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/><style>html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote,q{quotes:none}table{border-collapse:collapse;border-spacing:0}html,body,form,input,span,p,button,h3{border:0;margin:0;padding:0}blockquote:before,blockquote:after,q:before,q:after{content:none}body{background:#FAFAFA;color:#333;font-size:14px;font-family:'Microsoft YaHei',Hei,arial,sans-serif;min-width:320px;text-align:center}a,a:visited{color:#1A62D8;text-decoration:none}.fill-all{-webkit-box-flex:1}.search-box-reset{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0ZEMDdBRjg0MkRFMjExODVCMkY5Mzg2NkEyREU3QyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCODc3NEUxRjJEODQxMUUyODExNjkwNEU2OUU5RjhFOCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCODc3NEUxRTJEODQxMUUyODExNjkwNEU2OUU5RjhFOCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0ZEMDdBRjg0MkRFMjExODVCMkY5Mzg2NkEyREU3QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0ZEMDdBRjg0MkRFMjExODVCMkY5Mzg2NkEyREU3QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiZoltEAAAL0SURBVHjaxJhfZBxBHMc3cxVCn0LIQ12VkmodYSsVrlqlJVRptfLUOsI9lT6UPuY5VKNv1Wql8pYTJdEqjT6EcBqJHtVoOE6W4yihHGUJ/f3quzEdu/Nnd2/74+tOdub3+2Ru5js7M9RoNLwUMU66RfJJFdIwaRLPWqSQ9I20S1on9VwLnHBoe5JUJ90lTWva+fiM2rwkNUmrpFekvk0xYdGmRHpEOiA9M0AlxTT6HiBXKStYmbRDek4a9bLHKHLtIHcqsCrpizR38oxJ5K66gs2SPmOSDyrGUWPWFoznwzJW2qBjGLWqJjD+3dcKgpLh3qlzTiirjxuMecXHGGqX4sAeSh6UFHuk3ymL7xqe+2D4B4zNc97Q8SbpAuk0adsBKCCdI11Ef53BzoPlGGzO4FM8Uh/w/SfphiUcQ10m7cfkSfK5ORmsbmG0MvgvCziGuopPeR5XDLXqERg3PG+xT65Fw2wB1wVUR4F6bVGLn1cY7JrlXGGv+WgB18XPFwdVs6x1XThuyiY43UjVHOpMMdiE47LXwfFItRWoJUcojglh2uUd4ToxUPdT5C8LJXlWOBlqOSXU38UmvGxRTvA/hj2bJbGwfdW19CkXn9NFXyQktoXqxIxUHnCBkLYL2+gmQC1hzo3kALcvHDvFmacnWQIviE85wG0z2EYOI1VTVmtWuA2Bg+meoWGIxG0DlGolKtwM/kHtz8hMkV28NTRux8CbHP1KDNwhDr+6eCO/9rxAp6Q4o/iS7TbDcO8lOF61U5r2h2A5BmMvW9B0GMEhlTfjr457H7+9/MBVwXfDFrgQ+eqQdKlSwiHU9/5P8JngEulIPYzwH+7g1bno4Jr3Iqi4c2UAuLBAqBA1O6aT+BbpQUFwIWpt2d5drMC3egOE6qHGiuttzyYmY2sAUC3k3kx7PxbgoPoYzp01OMcT5AyyXNxFq3WRdAqAzRRATfTlHE/l1ZcULnewfQAu4m7rNi7gfHigfDl8BF/ifXg1zVz9I8AAXti+ZtHK9fMAAAAASUVORK5CYII=) no-repeat scroll center center transparent;-webkit-background-size:19px 19px;bottom:0;height:100%;position:absolute;right:6px;top:0;width:19px}.search-form-container{-webkit-box-flex:1;padding:10px 10px 0;position:relative;z-index:100}.search-form{border:1px solid #3eaf1e;-webkit-box-align:stretch;-webkit-box-pack:center;-webkit-box-sizing:border-box;display:-webkit-box}.input-container{background:white;-webkit-box-flex:1;position:relative}.q{-webkit-appearance:none;-moz-appearance:none;background:none;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;-webkit-box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.22);-webkit-box-sizing:border-box;font-size:18px;height:40px;line-height:24px;padding:4px 30px 4px 6px;width:100%}.search-button{-webkit-appearance:none;-moz-appearance:none;background:#41AF1E url(http://p1.qhimg.com/t0187f70107fd366673.png) no-repeat scroll center center;background-size:20px 20px,auto;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;display:block;height:40px;width:48px}.empty .q{background:#FFF url(http://p4.qhimg.com/t012bce291f0e0b4bef.png) no-repeat 12px 50%;background-size:auto 17px}.empty .search-box-reset{display:none}#header{background-color:#F8F8F8}@media only screen and (-webkit-device-pixel-ratio:1.5), only screen and (device-pixel-ratio:1.5){.search-form-container{padding:11px 11px 0}.q,.search-button{height:41px}}.nav{border-bottom:1px solid #c5c5c5;display:-webkit-box;height:37px;line-height:37px;padding:0 8px 0 7px}.more-list{background:-webkit-gradient(linear,0 0,0 5,from(#d1d1d1),to(#e6e6e6));border-bottom:1px solid #d7d7d7;display:none;height:65px}.nav ul{width:100%}.nav li{float:left;text-align:center;width:20%}.more-list ul{-webkit-box-flex:1;display:-webkit-box;list-style:none;margin:0;padding:0}.nav li span,.nav li a{border-bottom:none;box-sizing:border-box;color:#4a4a4a;display:inline-block;height:37px;text-align:center;text-decoration:none;white-space:nowrap;width:45px}.nav li span{border-bottom:2px solid #3eaf1e;box-sizing:border-box;color:#36b711;font-size:16px;width:45px}.nav li a{color:#4a4a4a;font-size:16px;width:100%}.more-list ul li{-webkit-box-flex:1;height:65px;margin:0;padding:0;text-align:center}.more-list ul li img{display:block;height:22px;margin:0 auto 4px}.more-list ul li a,.more-list ul li p{color:#585858;display:block;font-size:10px;height:53px;padding-top:12px;text-decoration:none}.nav .logo{padding:9px 0 0 11px}.show-more .more-list{display:block}#arr-more{margin-left:5px;vertical-align:middle;width:10px}#arr-more.up{-webkit-transform:rotate(180deg)}#header .show-more .search-form-container{background:-webkit-gradient(linear,0 0,0 1,from(#fff),to(#efefef))}.g-mohe{line-height:143%}.mohe-card-header{border-bottom:1px solid #e3e3e3;font-size:16px}.mohe-card-header,.mohe-card-footer{color:#045aea;display:block;line-height:40px;padding-left:15px}.mohe-card-footer{background:#f7f7f7;font-size:14px}.mohe-card-more{background:#fefefe;box-shadow:0 0 4px 1px #d8d8d8;display:block;font-size:15px;line-height:42px;margin-top:11px;text-align:center}.mohe-card-more,a.mohe-card-more{color:#333}.mohe-card-more::after,.mohe-more::after{background:url(http://p0.qhimg.com/d/inn/e2cdac7f/more.png) no-repeat;background-size:100% 100%;content:'';display:inline-block;height:10px;width:7px}.mohe-card-more::after{margin-left:3px}.res-list.mohe-cards{background-color:#f2f2f2;border:1px solid #ddd;border-left:none;border-right:none;margin:-1px -12px 0;padding:12px}.mohe-cards+.mohe-cards{border-top:none}.mohe-cards .mohe-card{background-color:#fff;box-shadow:0 0 4px 1px #d8d8d8;box-sizing:border-box}.g-mohe .title{font-size:16px}.g-mohe .source{color:#368E11}.g-mohe .time{color:#666}.g-mohe .g-clearfix:after,.g-mohe .gclearfix:after{clear:both;content:' ';display:block;line-height:0;visibility:hidden}.res-list:first-child.mohe-cards{margin-top:0}.mohe-cards .mohe-card~.mohe-card{margin:15px 0 0}.g-mohe .g-clearfix:after{clear:both;content:' ';display:block;height:1px;overflow:hidden}.res-list.g-mohe.g-card{padding-top:9px;padding-bottom:9px}.res-list.g-card.g-block,.g-card.g-block{padding:0}.g-card.g-block .title .res-title,.g-mohe .mohe-nav{background-color:#fafafa;display:block;height:40px;line-height:40px}.g-card.g-block .title .res-title{padding:0 15px}.g-card.g-block .title .res-title,.g-mohe .mohe-nav,.g-mohe .g-aline,.g-mohe .g-ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mohe-nav{border-top:1px solid #dadada}.mohe-mask{background-color:rgba(0,0,0,.8);color:#fff}.mohe-cont{color:#333;padding:15px}.mohe-more::after{background:url(http://p0.qhimg.com/d/inn/e2cdac7f/more.png) no-repeat;background-size:cover;content:'';display:inline-block;height:10px;margin-left:8px;width:7px}.g-mohe .g-ellipsis{-webkit-box-orient:vertical;display:-webkit-box;white-space:normal}.mohe-nav .mh-list{-webkit-box-orient:horizontal;display:-webkit-box}.mohe-nav .mh-item{-webkit-box-flex:1;box-sizing:border-box;height:16px;margin:13px 0 11px;position:relative;z-index:0}.mohe-nav .mh-link,.mohe-bar.mohe-more{color:#333;display:block;text-align:center}.mohe-bar.mohe-more{background-color:#f7f7f7;border:1px solid #e5e5e5;box-sizing:border-box;line-height:30px;width:100%}.mohe-nav .mh-item~.mh-item{border-left:1px solid #ddd}.mohe-nav .mh-item .mh-link{position:relative;top:-13px}.g-card{background-color:#fff;box-shadow:0 0 4px 1px rgba(0,0,0,.15);margin:10px 10px 0;padding:0 15px}.r-og-card{padding:0 10px}.r-page-hidden{display:none}.result-d{border-bottom:1px solid #e4e4e4;padding-bottom:5px}.res-show-url{margin-right:8px}.page-title{background:#f0f0f0;color:#666;font-size:12px;height:20px;line-height:20px;padding-left:10px}.res-d-title{color:#045AEA;display:inline-block;font-size:16px;line-height:22px;padding:0 0 4px;text-decoration:underline}.favicon_img{margin-right:4px;vertical-align:middle}.ui-tag{background-color:#6fb963;border-radius:2px;color:#FFF;font-family:tahoma\9;font-size:12px;margin:0 5px 0 0;padding:2px 3px;text-align:center}.so-short-video{clear:both;margin:5px 0}.so-ask{line-height:20px}.so-doc{background:url(http://p0.qhimg.com/d/inn/129456c7/sprite.png) no-repeat -196px -413px;color:#666;display:block;font-size:12px;line-height:24px;padding-left:20px}.so-doc-pdf{background-position:-196px -525px}.so-doc-txt{background-position:-196px -498px}.so-doc-ppt{background-position:-196px -470px}.so-doc-xls{background-position:-196px -442px}.so-doc-doc{background-position:-196px -414px}.warning{background:#ffdede url(http://p6.qhimg.com/d/inn/7777e9a8/ico_im.png) no-repeat 5px center;background-size:15px 15px;border:1px solid #f6c5c5;color:#d40000;font-size:12px;line-height:18px;overflow:hidden;padding-left:25px;text-overflow:ellipsis;white-space:nowrap}.res-list a,.res-list .res-title{text-decoration:none}a.res-link{color:#368e11;font-size:14px}.res-list cite{color:#afafaf;font-size:14px;height:26px;line-height:26px}.icon-mobile::after{background:url(http://p3.qhimg.com/t01f1480031713291b8.png);background-size:100% 100%;content:'';display:inline-block;height:16px;margin-left:8px;overflow:hidden;vertical-align:-2px;width:11px}.icon-guanwang::after{background:#80b669;border-radius:2px 2px 2px 2px;color:#FFF;content:'官网';display:inline-block;font-size:12px;height:16px;line-height:16px;margin-right:10px;margin-left:8px;text-align:center;vertical-align:2px;width:30px}.res-list em,.res-list b{color:#DA142B}.so-ask b{color:#c00;font-weight:lighter}.r-og-card .res-list{border-bottom:1px solid #e4e4e4;padding:9px 5px}.res-list .res-title{color:#045AEA;font-size:16px;line-height:28px;word-break:break-all}.res-list .title{display:block}.res-list .summary{color:#333;font-size:14px;line-height:22px;word-break:break-all}.r-og-card .page-title-prev{border-bottom:none}.so-short-video .video-pic{color:#fff;float:left;height:58px;margin-right:10px;position:relative;text-decoration:none;width:76px;z-index:0}.so-short-video .video-ext{color:#666;display:block;font-size:13px}.so-short-video .video-quality{background:#008EE2;cursor:pointer;font-size:12px;height:15px;line-height:15px;position:absolute;right:2px;top:2px}.so-short-video .video-time{background:rgba(0,0,0,.5);bottom:2px;display:block;height:15px;left:2px;line-height:15px;position:absolute;text-align:right;width:72px;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)\9}.so-ask .so-ask-tips{color:#666}.so-ask .so-ask-tips,.so-ask .so-ask-q{display:block}.so-ask .agree-num{background:url(http://p0.qhimg.com/d/inn/129456c7/sprite.png) no-repeat -122px -320px;color:#666;padding-left:15px;white-space:nowrap;word-break:keep-all}.res-list .title em,.res-list .title b{text-decoration:none}.so-short-video .video-pic img{border:1px #dadadb solid;height:54px;padding:1px;width:72px}.so-short-video .video-time span{background:url(http://p0.qhimg.com/d/inn/129456c7/sprite.png) no-repeat -93px -539px;cursor:pointer;display:block;font-size:12px;height:100%;padding-right:3px}.so-ask .so-ask-q em,.so-ask .so-ask-a em,.so-ask .so-ask-best em{color:green}.r-og-card .res-list:last-of-type{border-bottom:none}.so-short-video .video-pic:hover img{border:1px #7979ca solid}#main{text-align:left}footer{margin:5px 0 14px;text-align:center}footer a{color:#1A62D8;height:20px;line-height:20px}footer img{height:78px;margin-top:30px;width:64px}.autospell{font-size:14px;margin-top:5px;padding-left:10px}.autospell strong{font-weight:700}.jc a{color:#c00;display:inline-block;height:28px;line-height:28px;text-decoration:underline}#se{margin:0 0 5px;text-align:center}#no-result-tips{line-height:24px;margin-top:8px}#se a{background:url(http://p2.qhimg.com/t01593b8e2af2c0b341.png) no-repeat 0 0;background-size:18px 19px;color:#7d7d7d;display:inline-block;font-size:14px;line-height:19px;padding-left:24px}#no-result-tips em{color:#C00;font-style:normal}#se a em{color:#1a62d8;font-style:normal}.suggest-container,.suggest-container*{-webkit-tap-highlight-color:rgba(0,0,0,0)}.suggest-container{background:#fff;border:1px solid #bbb;border-top:0;display:none;position:relative;z-index:99}.suggest-item,.suggest-toolbar{-webkit-box-align:stretch;-webkit-box-pack:start;display:-webkit-box;line-height:22px}.suggest-toolbar{background-color:#f8f8f8;-webkit-box-pack:end;color:#969696}.suggest-item-title{-webkit-appearance:none;background:none transparent;border:none;border-bottom:1px solid #ddd;-webkit-box-flex:1;color:#333;display:block;font-size:16px;font-family:'microsoft yahei',hei,arial,sans-serif;line-height:36px;padding-left:8px;text-align:left}.suggest-item-add{background:white url('http://p1.qhimg.com/t0129eae3267053f012.png') no-repeat center center;background-size:13px 11px;border-bottom:1px solid #ddd;display:block;width:52px}.fill-all{-webkit-box-flex:1}.suggest-clearhistory{border-right:1px solid #ddd;display:none;line-height:32px;width:107px}.suggest-close{border-left:1px solid #ddd;font-size:16px;line-height:32px;padding:0 12px;text-align:center;width:55px}.flex1{-webkit-box-flex:1}.suggest-item-title .match{color:#afafaf}.suggest-item-add.touched{background-color:#f4f4f4}.suggest-history .suggest-clearhistory{display:block}.suggest-close.touched{background-color:#d6fdc4}</style><!-- loader --><script src="http://s1.qhimg.com/!88362c39/_360mso_ob_loader.js"></script><script>var Geo=function(){function t(t,i){e=t;if(navigator.geolocation){var s={enableHighAccuracy:!1,timeout:12e3,maximumAge:3e5};for(var o in i)o in s&&(s[o]=i[o]);navigator.geolocation.getCurrentPosition(n,r,s)}else{var u={code:-1,message:"geolocation is not supported",x:0,y:0};e&&e(u)}}function n(t){var n={code:0,message:"success",x:t.coords.longitude,y:t.coords.latitude};i("mso_x",n.x),i("mso_y",n.y),e&&e(n)}function r(t){var n={code:t.code,message:t.message,x:s("mso_x")||0,y:s("mso_y")||0};e&&e(n)}function i(e,t,n,r,i){n&&!isNaN(n)&&(n=new Date((new Date).getTime()+n)),document.cookie=e+"="+escape(t)+(n?"; expires="+n.toGMTString():"")+(r?"; path="+r:"; path=/")+(i?";domain="+i:"")}function s(e){var t=new RegExp("(?:;)?"+encodeURIComponent(e)+"=([^;]*);?");return t.test(document.cookie)?decodeURIComponent(RegExp.$1):null}var e;return{getPos:t}}();</script><!-- openinapp 大搜索代码 --><script>_loader.use('zepto', function() {$(document).ready(function() {var INTERVAL = 100, RETRY_TIMES = 100, timerId, count = 0;timerId = setInterval(function() {count++;openInAppView();if (window.openinapp_packagename_list) {return;}if (count >= RETRY_TIMES) {clearInterval(timerId);}}, INTERVAL);$(window).on('openInapp',function(event){openInAppView();});function success() {var $oia = $('.js-openinapp');$oia.each(function(index, item) {var $item = $(item),pkg = '' + $item.data('pkg'),latest_versionCode = $item.data('versioncode');if(openinapp_packagename_list[pkg] && ((openinapp_packagename_list[pkg]).version_code >= latest_versionCode)){$item.addClass('open');$item.addClass('js-openinapp-open');}else{$item.addClass('download');$item.addClass('js-openinapp-download');}});$('.js-openinapp-open').on('click', function() {var $oia = $(this).parents('.js-openinapp'),wapSchema = $oia.attr('data-wap_schema');if ($oia.hasClass('open')) {console.log(wapSchema.replace('#mse_token', window.mse_token || '#null#'));return false;}});}function openInAppView(){if (window.openinapp_packagename_list) {$('.js-openinapp').hasClass('hideopen') ? $('.js-openinapp').removeClass('hideopen') : '';clearInterval(timerId);success();}else{!$('.js-openinapp').hasClass('hideopen') ? $('.js-openinapp').addClass('hideopen') : '';}}});});</script></head><body><div id="main"><div class="res-list g-mohe g-card g-block" id="mohe-m-unit">
+<style>#mohe-m-unit .title .res-title{background-color: #fefefe;border-bottom:1px solid #ddd;color: #333;}#mohe-m-unit .mh-unit-con{padding:10px;background-color: #fefefe;}#mohe-m-unit .mh-unit-ul,#mohe-m-unit .mh-unit-ul2{border: 1px solid #ddd;height: 35px;line-height: 35px;margin-bottom: 10px;display: -webkit-box;display: -moz-box;display: box;}#mohe-m-unit .mh-unit-ul li:last-child,#mohe-m-unit .mh-unit-ul2 li:last-child{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;position: relative;}#mohe-m-unit .mh-unit-ul li:first-child{width: 75px;padding-left: 10px;}#mohe-m-unit .mh-unit-ul2 li:first-child{width: 65%;}#mohe-m-unit .mh-unit{width: 100%;border: none;height: 32px;background:transparent;-webkit-appearance:none;font:inherit;}#mohe-m-unit .mh-unit-ul2 li:first-child{border-right: 1px solid #ddd;}#mohe-m-unit .mh-unit-ul2 li:last-child{background-color: #f7f7f7;}#mohe-m-unit .mh-texts{height: 34px;line-height: 34px;text-indent:10px;width:100%;border: none;font-size: 18px;background:none;-webkit-appearance:none;font-weight: bold;}#mohe-m-unit .mh-sels{height: 35px;background:transparent;-webkit-appearance:none;width: 100%;border: none;text-indent: 3px;font:inherit;}#mohe-m-unit .mh-arr{display:block;overflow:hidden;width:0px;height:0px;padding:0;font-size:0;border:5px dashed transparent;border-top-style:solid;border-top-color:#aaa;position: absolute;top: 14px;right: 5px;}</style>
+
+<div href="" class="title"><h3 class="res-title">单位换算</h3></div><div class="mh-unit-con" data-mgd='{"b":"unit-form"}'><ul class="mh-unit-ul gclearfix" data-md='{"p":"type"}'><li>单位类型：</li><li><span class="mh-arr"></span><select class="mh-unit"><option value="长度" data-en="length">长度</option><option value="面积" data-en="area">面积</option><option value="体积" data-en="liquid">体积</option><option value="质量" data-en="quatity">质量</option><option value="压力" data-en="pressure">压力</option><option value="温度" data-en="temperature">温度</option><option value="时间" data-en="time">时间</option><option value="速度" data-en="speed">速度</option><option value="功率" data-en="power">功率</option><option value="功、能和热量" data-en="energy">功、能和热量</option><option value="力" data-en="force">力</option><option value="密度" data-en="density">密度</option><option value="角度" data-en="angle">角度</option><option value="数据存储" data-en="save">数据存储</option></select></li></ul><ul class="mh-unit-ul2 gclearfix"  data-md='{"p":"unit1"}'><li><input type="number" class="mh-texts mh-unit1-text" value="1" maxlength="15" /></li><li><span class="mh-arr"></span><select class="mh-sel-u1 mh-sels"><option value="">请选择单位</option></select></li></ul><ul class="mh-unit-ul2 gclearfix"  data-md='{"p":"unit2"}'><li><input type="number" class="mh-texts mh-unit2-text" value="33.8" maxlength="15" /></li><li><span class="mh-arr"></span><select class="mh-sel-u2 mh-sels"><option value="">请选择单位</option></select></li></ul></div>
+
+<script>
+_loader.use("zepto",function(){
+    var $scope=$('#mohe-m-unit');
+    var ut={
+      type:'temperature',/*初始化的type*/
+      typeSel:$('.mh-unit',$scope),/*type select框*/
+    }
+    var hasProp=function(obj,prop){
+        return Object.prototype.hasOwnProperty.call(obj,prop);
+    },
+    types={
+      "length":"长度",
+      "area":"面积",
+      "liquid":"体积",
+      "quatity":"质量",
+      "pressure":"压力",
+      "time":"时间",
+      "temperature":"温度",
+      "speed":"速度",
+      "power":"功率",
+      "energy":"功、能和热量",
+      "force":"力",
+      "density":"密度",
+      "angle":"角度",
+      "save":"数据存储"
+    },
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+    units={
+      "length":[{"tag":"optgroup","label":"公制","values":["千米","米","分米","厘米","毫米","微米","纳米","皮米"]},{"tag":"optgroup","label":"英制","values":["英尺","英寸","码","英里","英寻","弗隆"]},{"tag":"optgroup","label":"市制","values":["里","丈","尺","寸","分","厘","毫"]},{"tag":"optgroup","label":"其它","values":["海里"]}],
+      "area":[{"tag":"optgroup","label":"公制","values":["平方千米","公顷","公亩","平方米","平方分米","平方厘米","平方毫米"]},{"tag":"optgroup","label":"英制","values":["英亩","平方英里","平方码","平方英尺","平方英寸","平方竿"]},{"tag":"optgroup","label":"市制","values":["顷","亩","平方尺","平方寸"]}],
+      "liquid":[{"tag":"optgroup","label":"公制","values":["立方米","立方分米","立方厘米","立方毫米","升","分升","毫升","厘升","公石"]},{"tag":"optgroup","label":"英制","values":["立方英尺","立方英寸","立方码","亩英尺","英制加仑","美制加仑"]}],
+      "quatity":[{"tag":"optgroup","label":"公制","values":["千克","克","毫克","吨","公担"]},{"tag":"optgroup","label":"英制","values":["磅","盎司","克拉","格令","长吨","短吨","英担","美担","英石","打兰"]},{"tag":"optgroup","label":"市制","values":["担","斤","两","钱"]}],
+      "pressure":[{"tag":"option","values":["帕斯卡","千帕","百帕","标准大气压","毫米汞柱","英寸汞柱","巴","毫巴","磅力/平方英尺","磅力/平方英寸","毫米水柱","公斤力/平方厘米","公斤力/平方米"]}],
+      "time":[{"tag":"option","values":["年","周","天","时","分","秒","毫秒","微秒"]}],
+      "temperature":[{"tag":"option","values":["摄氏度","华氏度","开氏度"]}],
+      "speed":[{"tag":"option","values":["千米/小时","千米/秒","米/秒","马赫","节","英里/小时","英尺/秒","英寸/秒"]}],
+      "power":[{"tag":"option","values":["瓦","千瓦","英制马力","米制马力","公斤·米/秒","千卡/秒","英热单位/秒","英尺·磅/秒","焦耳/秒","牛顿·米/秒"]}],
+      "energy":[{"tag":"option","values":["焦耳","卡","千卡","公斤·米","米制马力·时","英制马力·时","千瓦·时","英热单位","英尺·磅"]}],
+      "force":[{"tag":"option","values":['千牛','牛顿','磅达','达因','英吨力','公吨力','美吨力','千磅力','磅力','千克力','克力']}],
+      "density":[{"tag":"option","values":['千克/立方厘米','千克/立方分米','千克/立方米','克/立方厘米','克/立方分米','克/立方米']}],
+      "angle":[{"tag":"option","values":["圆周","直角","百分度","度","分","秒","弧度","毫弧度"]}],
+      "save":[{"tag":"option","values":['千字节','刀字节','诺字节','佑字节','皆字节','艾字节','拍字节','太字节','吉字节','兆字节','字节','比特']}]
+    };
+
+    var changeUnit={
+      init:function(){/*初始化下拉列表 */
+          this.changeType(ut.type);
+          this.evt();
+      },
+      changeType:function(type){
+       $('.mh-unit option[data-en='+type+']').attr('selected','true');
+          var html1=this.setOpt(type,0);
+          var html2=this.setOpt(type,1);
+          $('.mh-sel-u1').html(html1);
+          $('.mh-sel-u2').html(html2);
+      },
+      /* 根据type和返回的unit1或unit2生成列表的html */   
+      setOpt:function(key,uNum){
+        var html='',
+            unitArr=[],
+            i=0,
+            bool1=true,
+            j;
+        if(hasProp(units,key)){
+          unitArr=units[key];
+        } 
+        for(j=unitArr.length;i<j;){
+          var op=unitArr[i++],
+            values=op.values,
+            isOptgroup=op.tag==="optgroup"?true:false,
+            inner='';
+            
+          for(var m=0,n=values.length;m<n;m++){
+            var value=values[m];
+            if (m==uNum&&bool1==true){
+              inner+="<option value='"+value+"' selected='selected'>"+value+"</option>";   
+              bool1=false;          
+            }else{
+              inner+="<option value='"+value+"'>"+value+"</option>";
+            }
+            
+          }
+          if(isOptgroup){
+            inner="<optgroup label='"+op.label+"'>"+inner+"</optgroup>";
+          }
+          html+=inner;
+        }
+        return html;
+      },
+      /* 获得ajax参数对象 */
+      getInf:function(){
+       return{
+         type:types[ut.type],
+          txt:$('.mh-unit1-text').val()||1,
+         from:$('.mh-unit1-text').closest('ul').find('select').val(),
+           to:$('.mh-unit2-text').closest('ul').find('select').val()
+       }
+      },
+      checkTextNull:function(){
+        if($('.mh-unit1-text').val()==''){
+          $('.mh-unit1-text').val(1);
+        }
+      },
+      /*请求计算*/
+      getResult:function(param){
+        $.ajax({
+               url:"http://open.onebox.so.com/api/unit?src=onebox&callback=?",
+               async:false,
+               dataType:"jsonp",
+               data:{"unitType":param.type,"txt":param.txt,"unit1":param.from,"unit2":param.to,"fromid":"360"},
+               success:function(data){
+                var status=parseInt(data.status,10),
+                    msg=data.msg,
+                    d='';
+                if (status==1) {/*请求成功后得到返回后数值*/
+                 var re = /=([^\u4e00-\u9fa5]+)/,
+                     d = re.exec(msg)[1];
+                     $('.mh-unit2-text').val(d);
+                }else{
+                  return false;
+                }
+              }
+            });
+      },
+      evt:function(){/*绑定事件*/
+        var that=this;
+        var timer=null;
+
+        /*type变化时*/
+        ut.typeSel.bind('change',function(){
+          var selType=$(this).find('option[value='+$(this).val()+']').attr('data-en');
+          ut.type=selType;
+          that.changeType(selType);
+          sendInf=that.getInf();
+          that.checkTextNull();
+          that.getResult(sendInf);
+        });        
+
+        /*文本框获得焦点*/
+        $('.mh-texts',$scope).bind('focus',function(){
+          $('.mh-texts').addClass('mh-unit2-text').removeClass('mh-unit1-text');
+          $(this).removeClass('mh-unit2-text').addClass('mh-unit1-text');
+          var sVal=$.trim($(this).val()),/*文本框数值*/
+              cur=$(this),
+              inf=null;
+              timer=setInterval(function(){
+                if(sVal!=$.trim(cur.val())){
+                sVal=$.trim(cur.val());
+                sendInf=that.getInf();
+                if(sVal==''){
+                  $('.mh-texts').val('');
+                  return false;
+                }
+                if(sVal==0){
+                  $('.mh-texts').val(0);
+                  return false;
+                }
+               if(inf!=sendInf){/*文本框数值不为0或空的时候请求计算*/
+                 that.getResult(sendInf);
+               }
+              }
+          },300);
+        }).bind('blur',function(){
+         clearInterval(timer);
+        });
+        /*换算单位下拉框变化时*/
+        $('.mh-sels',$scope).bind('change',function(){
+          sendInf=that.getInf();
+          that.checkTextNull();
+          that.getResult(sendInf);
+        });
+      }
+    }
+    changeUnit.init();
+})
+</script>
+</div></div><!-- <img src="https://chart.googleapis.com/chart?cht=qr&chs=180x180&chl=http%3A%2F%2F10.115.80.164%2Findex.php%3Fquery%3D%25E6%25B8%25A9%25E5%25BA%25A6%25E6%258D%25A2%25E7%25AE%2597%26url%3D1%257C%25E6%2591%2584%25E6%25B0%258F%25E5%25BA%25A6%257C%25E5%258D%258E%25E6%25B0%258F%25E5%25BA%25A6%26type%3Dunit%26rank%3D1%26ua%3DMozilla%252F4.0%2B%2528compatible%253B%2BMSIE%2B6.0%253B%2BWindows%2BNT%2B5.1%253B%2BTrident%252F4.0%253B%2BAlexa%2BToolbar%253B%2B.NET4.0C%253B%2B.NET4.0E%253B%2B.NET%2BCLR%2B2.0.50727%2529%26addInfo%3D%26d%3Dmobile%26jsonpTest%3Don%26_test%3D1%26_debug%3D0"/> --><!-- <img src="http://qr.liantu.com/api.php?&bg=ffffff&fg=000000&text=http%3A%2F%2F10.115.80.164%2Findex.php%3F%26query%3D%25E6%25B8%25A9%25E5%25BA%25A6%25E6%258D%25A2%25E7%25AE%2597%26url%3D1%257C%25E6%2591%2584%25E6%25B0%258F%25E5%25BA%25A6%257C%25E5%258D%258E%25E6%25B0%258F%25E5%25BA%25A6%26type%3Dunit%26rank%3D1%26ua%3DMozilla%252F4.0%2520%2528compatible%253B%2520MSIE%25206.0%253B%2520Windows%2520NT%25205.1%253B%2520Trident%252F4.0%253B%2520Alexa%2520Toolbar%253B%2520.NET4.0C%253B%2520.NET4.0E%253B%2520.NET%2520CLR%25202.0.50727%2529%26addInfo%3D%26d%3Dmobile%26jsonpTest%3Don%26_test%3D1%26_debug%3D0&w=160&m=10" class="mobile-scan-chart" title="扫描二维码打开【http://10.115.80.164/index.php?&query=温度换算&url=1|摄氏度|华氏度&type=unit&rank=1&ua=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Trident/4.0; Alexa Toolbar; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727)&addInfo=&d=mobile&jsonpTest=on&_test=1&_debug=0】"/> --><style type="text/css">#tools-qr canvas {margin-top: 50px;width: 300px;}</style><a href="http://10.115.80.164/index.php?&query=%E6%B8%A9%E5%BA%A6%E6%8D%A2%E7%AE%97&url=1%7C%E6%91%84%E6%B0%8F%E5%BA%A6%7C%E5%8D%8E%E6%B0%8F%E5%BA%A6&type=unit&rank=1&ua=Mozilla%2F4.0%20%28compatible%3B%20MSIE%206.0%3B%20Windows%20NT%205.1%3B%20Trident%2F4.0%3B%20Alexa%20Toolbar%3B%20.NET4.0C%3B%20.NET4.0E%3B%20.NET%20CLR%202.0.50727%29&addInfo=&d=mobile&jsonpTest=on&_test=1&_debug=0" title="&query=温度换算&url=1|摄氏度|华氏度&type=unit&rank=1&ua=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Trident/4.0; Alexa Toolbar; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727)&addInfo=&d=mobile&jsonpTest=on&_test=1&_debug=0" id="tools-qr" target="_blank"></a><script type="text/javascript">_loader.add('qrcode','http://s3.qhimg.com/!77792ca0/qrcode.js');_loader.use('zepto,qrcode',function(){var url = "http://10.115.80.164/index.php?&query=%E6%B8%A9%E5%BA%A6%E6%8D%A2%E7%AE%97&url=1%7C%E6%91%84%E6%B0%8F%E5%BA%A6%7C%E5%8D%8E%E6%B0%8F%E5%BA%A6&type=unit&rank=1&ua=Mozilla%2F4.0%20%28compatible%3B%20MSIE%206.0%3B%20Windows%20NT%205.1%3B%20Trident%2F4.0%3B%20Alexa%20Toolbar%3B%20.NET4.0C%3B%20.NET4.0E%3B%20.NET%20CLR%202.0.50727%29&addInfo=&d=mobile&jsonpTest=on&_test=1&_debug=0";var qr = $('#tools-qr');qr.qrcode(url);});</script><footer><a href="http://m.so.com/">360搜索首页</a></footer><script>_loader.add('_ob_mb_monitor','http://s6.qhimg.com/!524ed44f/_360mso_ob_ifr_monitor.js');_loader.use('zepto,_ob_mb_monitor',function(){})</script></body>

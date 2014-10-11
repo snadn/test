@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>loadjs</title>
+</head>
+<body>
+<script type="text/javascript">
+	var script = document.createElement('script');
+	script.src = 'http://s0.qhimg.com/lib/jquery/183.js';
+
+	// onreadystatechange 针对ie8及以下浏览器
+	script.onload = script.onreadystatechange = function() {
+		if (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete') {
+			// callback在此处执行
+			script.onload = script.onreadystatechange = null;
+			alert(1)
+		}
+	};
+
+	document.body.appendChild(script);
+</script>
+</body>
+</html>
